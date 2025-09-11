@@ -1,0 +1,31 @@
+﻿id,Nom,Groupe,Type,Site Web,Genre
+1,Chérie FM,NRJ Group,FM,https://www.cheriefm.fr,Musique
+2,France Inter,Radio France,FM,https://www.franceinter.fr,Généraliste
+3,RTL,Groupe M6,FM,https://www.rtl.fr,Généraliste
+4,France Info,Radio France,FM,https://www.francetvinfo.fr,Info
+5,Europe 1,Lagardère News,FM,https://www.europe1.fr,Généraliste
+6,RMC,Altice Média,FM,https://rmc.bfmtv.com,Sport
+7,NRJ,NRJ Group,FM,https://www.nrj.fr,Jeune
+8,Nostalgie,NRJ Group,FM,https://www.nostalgie.fr,Musique
+9,Skyrock,Vortex,FM,https://www.skyrock.fm,Jeune
+10,France Culture,Radio France,FM,https://www.franceculture.fr,Culture
+11,France Musique,Radio France,FM,https://www.francemusique.fr,Classique
+12,FIP,Radio France,FM,https://www.fip.fr,Jazz
+13,RFM,Lagardère News,FM,https://www.rfm.fr,Musique
+14,RTL2,Groupe M6,FM,https://www.rtl2.fr,Musique
+15,Fun Radio,Groupe M6,FM,https://www.funradio.fr,Musique
+16,Rire et Chansons,NRJ Group,FM,https://www.rireetchansons.fr,Humour
+17,Radio Classique,Les Échos-Le Parisien,FM,https://www.radioclassique.fr,Classique
+18,Sud Radio,Sud Radio Groupe,FM,https://www.sudradio.fr,Généraliste
+19,Radio Nova,Nova Press,FM,https://www.nova.fr,Musique
+20,TSF Jazz,Nova Press,FM,https://www.tsfjazz.com,Jazz
+21,Mouv',Radio France,FM,https://www.mouv.fr,Jeune
+22,Chante France,HPI Groupe,FM,https://www.chantefrance.com,Musique
+23,Oui FM,Groupe 1981,FM,https://www.ouifm.fr,Rock
+24,Radio FG,FG DJ Radio,FM,https://www.radiofg.com,Electro
+25,Alouette,Alouette SA,FM,https://www.alouette.fr,Musique
+26,Latina,Groupe 1981,FM,https://www.latina.fr,Latino
+27,Radio Scoop,Scoop Communication,FM,https://www.radioscoop.com,Musique
+28,Tropiques FM,Tropiques FM,FM,https://www.tropiquesfm.com,Musique
+29,Jazz Radio,Espace Group,FM,https://www.jazzradio.fr,Jazz
+30,M Radio,Espace Group,FM,https://www.mradio.fr,Musique

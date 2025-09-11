@@ -1,0 +1,173 @@
+comment: |
+  '{
+      "en": {
+          "displayName": "French Radios List FTS",
+          "comment": "Performs a full text search on every columns for every terms entered"
+      },
+      "fr": {
+          "displayName": "Liste des Radios françaises FTS",
+          "comment": "Effectue une recherce complète dans toutes les colonnes sur chacun des termes saisis"
+      }
+  }'
+↓inputVars [steps.InputVariablesStep-1757507685236]: 
+↓Call_Sequence [steps.SequenceStep-1757507685239]: 
+  sourceSequence: demo_full_text_search.RADIOSRadiosFTSList
+  ↓searched_string [variables.StepVariable-1757507685245]: 
+    comment: If provided only rows with data that matches the search query are going to be returned.
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1757507685236
+          - java.lang.String: 
+            - ↑value: ./forms_filtre/text()
+↓data [steps.JsonArrayStep-1757507685251]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: data
+  ↓Iterator [steps.IteratorStep-1757507685254]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1757507685239
+          - java.lang.String: 
+            - ↑value: ./document/object/results/object
+    ↓item [steps.JsonObjectStep-1757507685257]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: item
+      ↓Nom [steps.JsonObjectStep-1757507685260]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: Nom
+        ↓displayName [steps.JsonFieldStep-1757507685263]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: displayName
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Nom
+        ↓displayValue [steps.JsonFieldStep-1757507685266]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: displayValue
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: SOURCE
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1757507685254
+                  - java.lang.String: 
+                    - ↑value: ./Nom/text()
+      ↓Groupe [steps.JsonObjectStep-1757507685269]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: Groupe
+        ↓displayName [steps.JsonFieldStep-1757507685272]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: displayName
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Groupe
+        ↓displayValue [steps.JsonFieldStep-1757507685275]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: displayValue
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: SOURCE
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1757507685254
+                  - java.lang.String: 
+                    - ↑value: ./Groupe/text()
+      ↓Genre [steps.JsonObjectStep-1757507685278]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: Genre
+        ↓displayName [steps.JsonFieldStep-1757507685281]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: displayName
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Genre
+        ↓displayValue [steps.JsonFieldStep-1757507685284]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: displayValue
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: SOURCE
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1757507685254
+                  - java.lang.String: 
+                    - ↑value: ./Genre/text()
+↓forms_filtre [variables.RequestableVariable-1757507685287]: 
+  comment: |
+    '{
+        "en": {
+            "displayName": "Filter",
+            "comment": "Perform a full text search"
+        },
+        "fr": {
+            "displayName": "Filtre",
+            "comment": "Recherche dans tous les colonnes"
+        }
+    }'
+↓Test_Case [core.TestCase]: 
+  ↓searched_string [variables.TestCaseVariable-1757507933854]: 
+    value: Chérie NRJ

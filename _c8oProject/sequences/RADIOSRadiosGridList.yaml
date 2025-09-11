@@ -1,0 +1,55 @@
+comment: |
+  '## List rows of Radios from RADIOS
+  
+  Uses the ''search'' variable to perform a basic text search in each columns.'
+↓table_id [steps.SimpleStep-1757058897580]: 
+  expression: table_id = '${test_crud.crud.RADIOS.Radios=3050}';
+↓apiKey [steps.SimpleStep-1757058897582]: 
+  expression: (__header_Authorization = 'Token ${lib_baserow.apikey.secret=}') == 'Token '
+↓Call_Transaction [steps.TransactionStep-1757058897586]: 
+  sourceTransaction: lib_BaseRow.Baserow_API_spec._api_database_rows_table__table_id___GET
+  ↓__header_Authorization [variables.StepVariable-1757058897588]: 
+  ↓table_id [variables.StepVariable-1757058897590]: 
+  ↓user_field_names [variables.StepVariable-1757058897592]: 
+    value: true
+  ↓include_fields [variables.StepVariable-1757058897950]: 
+    value: Nom,Groupe,Type,Site Web,Genre
+  ↓page [variables.StepVariable-1757058897954]: 
+  ↓search [variables.StepVariable-1757058897958]: 
+  ↓size [variables.StepVariable-1757058897962]: 
+↓Copy [steps.XMLCopyStep-1757058897964]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1757058897586
+        - java.lang.String: 
+          - ↑value: ./document/object
+↓jIf [steps.IfStep-1757058897966]: 
+  condition: false
+  ↓object [steps.JsonToXmlStep-1757058897968]: 
+    arrayChildrenTag: object
+    jsonSample: |
+      '{
+        "count": 0,
+        "next": "",
+        "previous": "",
+        "results": [{
+          "id": 0,
+          "order": "0",
+          "Nom": "",
+          "Groupe": "",
+          "Type": "",
+          "Site Web": "",
+          "Genre": ""
+        }]
+      }'
+↓page [variables.RequestableVariable-1757058897952]: 
+  comment: Defines which page of rows should be returned.
+  value: 1
+↓search [variables.RequestableVariable-1757058897956]: 
+  comment: If provided only rows with data that matches the search query are going to be returned.
+↓size [variables.RequestableVariable-1757058897960]: 
+  comment: Defines how many rows should be returned per page.
+  value: 100

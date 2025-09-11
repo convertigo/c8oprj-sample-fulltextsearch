@@ -1,0 +1,176 @@
+comment: |
+  '{
+      "en": {
+          "displayName": "French Radios List",
+          "comment": "Can be filtered out providing the ''filter'' variable"
+      },
+      "fr": {
+          "displayName": "Liste des Radios françaises",
+          "comment": "Peut être filtrée avec la variable ''filter''"
+      }
+  }'
+↓inputVars [steps.InputVariablesStep-1757062149017]: 
+↓Call_Sequence [steps.SequenceStep-1757061902364]: 
+  sourceSequence: demo_full_text_search.RADIOSRadiosGridList
+  ↓page [variables.StepVariable-1757061902366]: 
+    comment: Defines which page of rows should be returned.
+    value: 1
+  ↓search [variables.StepVariable-1757061902368]: 
+    comment: If provided only rows with data that matches the search query are going to be returned.
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1757062149017
+          - java.lang.String: 
+            - ↑value: ./forms_filtre/text()
+  ↓size [variables.StepVariable-1757061902370]: 
+    comment: Defines how many rows should be returned per page.
+    value: 100
+↓data [steps.JsonArrayStep-1757062246314]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: data
+  ↓Iterator [steps.IteratorStep-1757062270238]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1757061902364
+          - java.lang.String: 
+            - ↑value: ./document/object/results/object
+    ↓item [steps.JsonObjectStep-1757062306518]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: item
+      ↓Nom [steps.JsonObjectStep-1757062587344]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: Nom
+        ↓displayName [steps.JsonFieldStep-1757063469876]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: displayName
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Nom
+        ↓displayValue [steps.JsonFieldStep-1757063476008]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: displayValue
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: SOURCE
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1757062270238
+                  - java.lang.String: 
+                    - ↑value: ./Nom/text()
+      ↓Groupe [steps.JsonObjectStep-1757063548555]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: Groupe
+        ↓displayName [steps.JsonFieldStep-1757063548558]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: displayName
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Groupe
+        ↓displayValue [steps.JsonFieldStep-1757063548561]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: displayValue
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: SOURCE
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1757062270238
+                  - java.lang.String: 
+                    - ↑value: ./Groupe/text()
+      ↓Genre [steps.JsonObjectStep-1757063613710]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: Genre
+        ↓displayName [steps.JsonFieldStep-1757063613713]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: displayName
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Genre
+        ↓displayValue [steps.JsonFieldStep-1757063613716]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: displayValue
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: SOURCE
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1757062270238
+                  - java.lang.String: 
+                    - ↑value: ./Genre/text()
+↓forms_filtre [variables.RequestableVariable-1757061909648]: 
+  comment: |
+    '{
+        "en": {
+            "displayName": "Filter",
+            "comment": "Perform a full text search"
+        },
+        "fr": {
+            "displayName": "Filtre",
+            "comment": "Recherche dans tous les colonnes"
+        }
+    }'

@@ -1,8 +1,21 @@
 ↑convertigo: 8.0.0.m006
-↓test_crud [core.Project]: 
-  comment: Mashup Sequencer project
+↓demo_full_text_search [core.Project]: 
+  comment: |
+    '### Full Text Search
+    
+    ## Demo back-end project for Studio No Code.
+    
+    In the resources folder you will find:
+     - export - Radios.csv => Data to import in your Baserow workspace.
+     - Full TEXT SEARCH 2.c8oforms => Application to import from the Studio No Code Dashboard.'
   contextTimeout: 59
   corsOrigin: =Origin
   httpSessionTimeout: 60
+  version: 1.1
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
-  ↓NewSequence [sequences.GenericSequence]: 🗏 sequences/NewSequence.yaml
+  ↓formssource_RADIOS [sequences.GenericSequence]: 🗏 sequences/formssource_RADIOS.yaml
+  ↓formssource_RADIOS_FTS [sequences.GenericSequence]: 🗏 sequences/formssource_RADIOS_FTS.yaml
+  ↓RADIOSRadiosFTSList [sequences.GenericSequence]: 🗏 sequences/RADIOSRadiosFTSList.yaml
+  ↓RADIOSRadiosGridList [sequences.GenericSequence]: 🗏 sequences/RADIOSRadiosGridList.yaml
+  ↓lib_BaseRow [references.ProjectSchemaReference]: 
+    projectName: lib_BaseRow=https://github.com/convertigo/c8oprj-lib-baserow/releases/download/1.1.11/lib_BaseRow.car

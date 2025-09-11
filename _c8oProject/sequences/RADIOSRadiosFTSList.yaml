@@ -1,0 +1,102 @@
+comment: |
+  '## List rows of Radios from RADIOS
+  
+  Uses the ''searched_string'' variable to perform a complex search of every term of the string in each table columns.'
+↓table_id [steps.SimpleStep-1757498382474]: 
+  expression: table_id = '${demo_full_text_search.crud.RADIOS.Radios=3050}';
+↓apiKey [steps.SimpleStep-1757498382476]: 
+  expression: (__header_Authorization = 'Token ${lib_baserow.apikey.secret=}') == 'Token '
+↓filter [steps.SimpleStep-1757498382478]: 
+  expression: |
+    'var check = t => typeof t == ''undefined'' || t == null ? '''' : t;
+    
+    //searched_string = "Chérie NRJ"; // Exemple : à remplacer dynamiquement
+    
+    const jsonStructure = {
+      filter_type: "AND",
+      filters: [],
+      groups: []
+    };
+    
+    if (searched_string && searched_string.trim() !== "") {
+      const terms = searched_string.trim().split(/\s+/);
+    
+      jsonStructure.groups = terms.map(term => ({
+        filter_type: "OR",
+        filters: [
+          {
+            type: "contains",
+            field: "Nom",
+            value: term
+          },
+          {
+            type: "contains",
+            field: "Groupe",
+            value: term
+          },
+          {
+            type: "contains",
+            field: "Genre",
+            value: term
+          }
+        ],
+        groups: []
+      }));
+    }
+    
+    //log.info(JSON.stringify(jsonStructure, null, 2));
+    
+    filterExpression = ''filters='' + encodeURIComponent(JSON.stringify(jsonStructure));
+    
+    //log.info(filterExpression);'
+↓Call_Transaction [steps.TransactionStep-1757498382480]: 
+  sourceTransaction: lib_BaseRow.Baserow_API_spec._api_database_rows_table__table_id___GET
+  ↓__header_Authorization [variables.StepVariable-1757498382482]: 
+  ↓table_id [variables.StepVariable-1757498382484]: 
+  ↓user_field_names [variables.StepVariable-1757498382486]: 
+    value: true
+  ↓filterExpression [variables.StepVariable-1757500802918]: 
+  ↓include_fields [variables.StepVariable-1757500802921]: 
+    value: Nom,Groupe,Type,Site Web,Genre
+  ↓page [variables.StepVariable-1757500802924]: 
+  ↓search [variables.StepVariable-1757500802927]: 
+  ↓size [variables.StepVariable-1757500802930]: 
+↓Copy [steps.XMLCopyStep-1757507360122]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1757498382480
+        - java.lang.String: 
+          - ↑value: ./document/object
+↓jIf [steps.IfStep-1757507360125]: 
+  condition: false
+  ↓object [steps.JsonToXmlStep-1757507360128]: 
+    arrayChildrenTag: object
+    jsonSample: |
+      '{
+        "count": 0,
+        "next": "",
+        "previous": "",
+        "results": [{
+          "id": 0,
+          "order": "0",
+          "Nom": "",
+          "Groupe": "",
+          "Type": "",
+          "Site Web": "",
+          "Genre": ""
+        }]
+      }'
+↓page [variables.RequestableVariable-1757498976234]: 
+  comment: Defines which page of rows should be returned.
+  value: 1
+↓size [variables.RequestableVariable-1757498976240]: 
+  comment: Defines how many rows should be returned per page.
+  value: 100
+↓searched_string [variables.RequestableVariable-1757498991071]: 
+  comment: Strings to search in every Baserow table columns
+↓Test_Case [core.TestCase]: 
+  ↓searched_string [variables.TestCaseVariable-1757507623978]: 
+    value: Chérie NRJ
