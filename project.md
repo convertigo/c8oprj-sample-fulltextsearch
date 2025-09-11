@@ -8,6 +8,8 @@
 In the resources folder you will find:
  - export - Radios.csv => Data to import in your Baserow workspace.
  - Full TEXT SEARCH 2.c8oforms => Application to import from the Studio No Code Dashboard.
+ 
+ [Convertigo No Code Studio](https://www.convertigo.com/fr/platform/no-code-studio)
 
 <details><summary><span style="color:DarkGoldenRod"><i>References</i></span></summary><blockquote><p>
 
